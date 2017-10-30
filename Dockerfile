@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y texlive texlive-binaries etoolbox texinfo lmodern wget
+RUN apt-get update && apt-get install -y texlive texlive-binaries etoolbox texinfo lmodern wget texlive-fonts-extra
 
 RUN wget http://mirrors.ctan.org/macros/latex/contrib/moderncv.zip && \
   unzip moderncv.zip && \

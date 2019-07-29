@@ -1,8 +1,10 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y texlive texlive-binaries etoolbox texinfo lmodern wget texlive-fonts-extra
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN wget http://mirrors.ctan.org/macros/latex/contrib/moderncv.zip && \
+RUN apt-get update && apt-get install -y texlive texlive-binaries texlive-latex-recommended texinfo lmodern wget texlive-fonts-extra
+
+RUN wget --no-check-certificate https://mirrors.ctan.org/macros/latex/contrib/moderncv.zip && \
   unzip moderncv.zip && \
   mkdir -p ~/texmf/tex/latex && \
   mv moderncv/ ~/texmf/tex/latex/
